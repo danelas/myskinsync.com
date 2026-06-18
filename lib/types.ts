@@ -23,6 +23,7 @@ export interface Product {
   popularity: number; // demand rank from The Listener brief (mentions)
   asin?: string; // fill in once you have the exact product; falls back to search
   searchTerms?: string;
+  image?: string; // optional product photo URL; falls back to a branded monogram
   blurb: string;
 }
 

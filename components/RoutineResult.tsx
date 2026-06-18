@@ -3,6 +3,7 @@
 import type { Answers, Routine, RoutineStep } from "@/lib/types";
 import { affiliateUrl, AFFILIATE_LINK_PROPS } from "@/lib/affiliate";
 import { AffiliateDisclosure } from "./Disclosure";
+import { ProductThumb } from "./ProductThumb";
 
 function StepCard({ s, index }: { s: RoutineStep; index: number }) {
   const p = s.product;
@@ -11,6 +12,7 @@ function StepCard({ s, index }: { s: RoutineStep; index: number }) {
       <div className="h-8 w-8 shrink-0 rounded-full bg-sage/30 text-ink font-semibold flex items-center justify-center text-sm">
         {index + 1}
       </div>
+      <ProductThumb brand={p.brand} image={p.image} size="h-14 w-14" />
       <div className="flex-1">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-xs font-semibold uppercase tracking-wide text-clay">

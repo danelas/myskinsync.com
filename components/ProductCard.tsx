@@ -1,22 +1,28 @@
 import type { Product } from "@/lib/types";
 import { affiliateUrl, AFFILIATE_LINK_PROPS } from "@/lib/affiliate";
+import { ProductThumb } from "./ProductThumb";
 
 /** Compact product card used in guides (and reusable elsewhere). */
 export function ProductCard({ product, rank }: { product: Product; rank?: number }) {
   return (
     <div className="rounded-2xl bg-white border border-ink/10 p-5 shadow-soft">
-      <div className="flex items-center gap-2 flex-wrap">
-        {rank !== undefined && (
-          <span className="h-6 w-6 rounded-full bg-sage/30 text-ink text-xs font-semibold flex items-center justify-center">
-            {rank}
-          </span>
-        )}
-        <span className="text-xs font-semibold uppercase tracking-wide text-clay">
-          {product.brand}
-        </span>
+      <div className="flex items-start gap-4">
+        <ProductThumb brand={product.brand} image={product.image} />
+        <div>
+          <div className="flex items-center gap-2 flex-wrap">
+            {rank !== undefined && (
+              <span className="h-6 w-6 rounded-full bg-sage/30 text-ink text-xs font-semibold flex items-center justify-center">
+                {rank}
+              </span>
+            )}
+            <span className="text-xs font-semibold uppercase tracking-wide text-clay">
+              {product.brand}
+            </span>
+          </div>
+          <h4 className="mt-1 font-semibold leading-tight font-sans">{product.name}</h4>
+        </div>
       </div>
-      <h4 className="mt-1 font-semibold leading-tight font-sans">{product.name}</h4>
-      <p className="mt-1 text-sm text-ink/70">{product.blurb}</p>
+      <p className="mt-3 text-sm text-ink/70">{product.blurb}</p>
       <a
         href={affiliateUrl(product)}
         {...AFFILIATE_LINK_PROPS}

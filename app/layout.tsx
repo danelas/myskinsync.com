@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import "./globals.css";
 import { AffiliateDisclosure } from "@/components/Disclosure";
+import { Logo } from "@/components/Logo";
+
+export const viewport: Viewport = { themeColor: "#FBF7F2" };
 
 const SITE = "MySkinSync";
 const TAGLINE = "Find your perfect skincare routine in 60 seconds";
@@ -39,8 +42,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="page-bg min-h-screen flex flex-col antialiased">
         <header className="sticky top-0 z-20 backdrop-blur-md bg-cream/70 border-b border-ink/10">
           <div className="mx-auto max-w-5xl px-5 h-16 flex items-center justify-between">
-            <Link href="/" className="font-display font-semibold text-xl tracking-tight">
-              My<span className="text-clay">Skin</span>Sync
+            <Link href="/" aria-label="MySkinSync home">
+              <Logo />
             </Link>
             <nav className="flex items-center gap-2 sm:gap-4">
               <Link href="/guides" className="text-sm font-medium text-ink/70 hover:text-ink px-2 py-1">
@@ -60,8 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <footer className="border-t border-ink/10 mt-20 bg-cream/50">
           <div className="mx-auto max-w-5xl px-5 py-12 space-y-6">
-            <Link href="/" className="font-display font-semibold text-lg tracking-tight">
-              My<span className="text-clay">Skin</span>Sync
+            <Link href="/" aria-label="MySkinSync home">
+              <Logo />
             </Link>
             <AffiliateDisclosure />
             <p className="text-xs text-ink/50">

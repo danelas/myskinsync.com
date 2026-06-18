@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllGuides } from "@/lib/guides";
+import { LogoMark } from "@/components/Logo";
 
 const TRUSTED = ["CeraVe", "The Ordinary", "La Roche-Posay", "Paula's Choice", "EltaMD"];
 
@@ -8,7 +9,8 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-5xl px-5">
       {/* Hero */}
-      <section className="pt-16 sm:pt-24 pb-12 text-center">
+      <section className="relative pt-16 sm:pt-24 pb-12 text-center">
+        <LogoMark className="pointer-events-none absolute -top-2 right-2 sm:right-10 h-40 w-40 opacity-[0.06] rotate-12" />
         <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-xs font-medium text-ink/70 shadow-soft">
           <span className="h-1.5 w-1.5 rounded-full bg-sage" />
           Free · 60 seconds · no email required
