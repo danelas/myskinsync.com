@@ -8,6 +8,7 @@ import { AffiliateDisclosure } from "./Disclosure";
 import { ProductThumb } from "./ProductThumb";
 import { PriceTag } from "./PriceTag";
 import { EmailCapture } from "./EmailCapture";
+import { SunIcon, MoonIcon, SparkleIcon } from "./Icons";
 
 function StepCard({ s, index, price }: { s: RoutineStep; index: number; price?: PriceInfo }) {
   const p = s.product;
@@ -16,7 +17,7 @@ function StepCard({ s, index, price }: { s: RoutineStep; index: number; price?: 
       <div className="h-8 w-8 shrink-0 rounded-full bg-sage/30 text-ink font-semibold flex items-center justify-center text-sm">
         {index + 1}
       </div>
-      <ProductThumb brand={p.brand} image={p.image} size="h-14 w-14" />
+      <ProductThumb brand={p.brand} image={p.image} step={p.step} size="h-14 w-14" />
       <div className="flex-1">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-xs font-semibold uppercase tracking-wide text-clay">
@@ -92,7 +93,9 @@ export function RoutineResult({
 
       <div className="grid md:grid-cols-2 gap-8">
         <section>
-          <h3 className="font-semibold text-lg mb-3">☀️ Morning</h3>
+          <h3 className="flex items-center gap-2 font-semibold text-lg mb-3">
+            <SunIcon className="h-5 w-5 text-clay" /> Morning
+          </h3>
           <ol className="space-y-3">
             {routine.am.map((s, i) => (
               <StepCard key={`am-${i}`} s={s} index={i} price={s.product.asin ? prices[s.product.asin] : undefined} />
@@ -100,7 +103,9 @@ export function RoutineResult({
           </ol>
         </section>
         <section>
-          <h3 className="font-semibold text-lg mb-3">🌙 Night</h3>
+          <h3 className="flex items-center gap-2 font-semibold text-lg mb-3">
+            <MoonIcon className="h-5 w-5 text-clay" /> Night
+          </h3>
           <ol className="space-y-3">
             {routine.pm.map((s, i) => (
               <StepCard key={`pm-${i}`} s={s} index={i} price={s.product.asin ? prices[s.product.asin] : undefined} />
@@ -111,7 +116,9 @@ export function RoutineResult({
 
       {routine.weekly.length > 0 && (
         <section>
-          <h3 className="font-semibold text-lg mb-3">✨ A few times a week</h3>
+          <h3 className="flex items-center gap-2 font-semibold text-lg mb-3">
+            <SparkleIcon className="h-5 w-5 text-clay" /> A few times a week
+          </h3>
           <ol className="space-y-3 max-w-xl">
             {routine.weekly.map((s, i) => (
               <StepCard key={`wk-${i}`} s={s} index={i} price={s.product.asin ? prices[s.product.asin] : undefined} />

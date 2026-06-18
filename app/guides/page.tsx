@@ -37,7 +37,7 @@ export default function GuidesIndex() {
               href={`/guides/${g.slug}`}
               className="rounded-4xl bg-white border border-ink/10 p-6 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition-all flex gap-4"
             >
-              {lead && <ProductThumb brand={lead.brand} image={lead.image} size="h-20 w-20" />}
+              {lead && <ProductThumb brand={lead.brand} image={lead.image} step={lead.step} size="h-20 w-20" />}
               <div className="flex-1">
                 {g.concern && (
                   <span className="inline-block rounded-full bg-blush/40 px-3 py-1 text-xs font-medium text-clayDark capitalize">

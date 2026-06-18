@@ -9,7 +9,7 @@ export function ProductCard({ product, rank, priceInfo }: { product: Product; ra
   return (
     <div className="rounded-2xl bg-white border border-ink/10 p-5 shadow-soft">
       <div className="flex items-start gap-4">
-        <ProductThumb brand={product.brand} image={product.image} />
+        <ProductThumb brand={product.brand} image={product.image} step={product.step} />
         <div>
           <div className="flex items-center gap-2 flex-wrap">
             {rank !== undefined && (

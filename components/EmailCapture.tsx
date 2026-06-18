@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Answers } from "@/lib/types";
+import { MailIcon } from "./Icons";
 
 type RoutineSummary = Record<string, { label: string; id: string; brand: string; name: string }[]>;
 
@@ -49,7 +50,10 @@ export function EmailCapture({ profile, routine }: { profile: Answers; routine: 
 
   return (
     <form onSubmit={submit} className="rounded-4xl bg-white border border-ink/10 shadow-soft p-7 text-center">
-      <h3 className="font-display text-2xl font-semibold">Want this routine emailed to you?</h3>
+      <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-blush/40 text-clayDark">
+        <MailIcon className="h-6 w-6" />
+      </span>
+      <h3 className="mt-3 font-display text-2xl font-semibold">Want this routine emailed to you?</h3>
       <p className="mt-2 text-ink/70">
         Get your personalized routine in your inbox so you have it when you shop — plus
         occasional, no-spam skincare tips.

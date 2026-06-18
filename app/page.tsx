@@ -3,6 +3,7 @@ import { getAllGuides } from "@/lib/guides";
 import { PRODUCTS } from "@/lib/products";
 import { LogoMark } from "@/components/Logo";
 import { ProductThumb } from "@/components/ProductThumb";
+import { ClipboardIcon, RoutineIcon, BagIcon } from "@/components/Icons";
 
 const TRUSTED = ["CeraVe", "The Ordinary", "La Roche-Posay", "Paula's Choice", "EltaMD"];
 
@@ -55,16 +56,18 @@ export default function Home() {
       {/* How it works */}
       <section className="py-12 grid sm:grid-cols-3 gap-5">
         {[
-          { icon: "🧴", t: "Tell us your skin", d: "Skin type, your main goal, sensitivity, and budget. Four taps." },
-          { icon: "✨", t: "Get your routine", d: "A clear morning + night lineup — cleanser, treatment, moisturizer, SPF — sequenced for you." },
-          { icon: "🛍️", t: "Shop it in one place", d: "Every product linked, so you can grab the whole routine in a single trip." },
+          { Icon: ClipboardIcon, t: "Tell us your skin", d: "Skin type, your main goal, sensitivity, and budget. Four taps." },
+          { Icon: RoutineIcon, t: "Get your routine", d: "A clear morning + night lineup — cleanser, treatment, moisturizer, SPF — sequenced for you." },
+          { Icon: BagIcon, t: "Shop it in one place", d: "Every product linked, so you can grab the whole routine in a single trip." },
         ].map((s, i) => (
           <div
             key={s.t}
             className="rounded-4xl bg-white/80 border border-ink/10 p-7 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition-all"
           >
             <div className="flex items-center gap-3">
-              <span className="text-2xl">{s.icon}</span>
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-blush/40 text-clayDark">
+                <s.Icon className="h-5 w-5" />
+              </span>
               <span className="text-xs font-semibold text-clay">STEP {i + 1}</span>
             </div>
             <h3 className="mt-4 font-semibold text-xl">{s.t}</h3>
@@ -92,7 +95,7 @@ export default function Home() {
                   className="group rounded-4xl bg-white/80 border border-ink/10 p-7 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition-all block"
                 >
                   <div className="flex items-center gap-3">
-                    {lead && <ProductThumb brand={lead.brand} image={lead.image} size="h-14 w-14" />}
+                    {lead && <ProductThumb brand={lead.brand} image={lead.image} step={lead.step} size="h-14 w-14" />}
                     {g.concern && (
                       <span className="inline-block rounded-full bg-blush/40 px-3 py-1 text-xs font-medium text-clayDark capitalize">
                         {g.concern}

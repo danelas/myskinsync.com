@@ -1,6 +1,8 @@
-// Branded monogram tile used where we don't yet have real product photos.
-// Looks intentional (not a broken image). Swap for real <img> once you add
-// product images / PA-API.
+// Branded placeholder tile used where we don't yet have real product photos.
+// Shows a product-type icon + brand monogram on a soft gradient — looks
+// intentional, not broken. When `image` is set (from the Creators API sync),
+// the real photo is shown instead.
+import { ProductTypeIcon } from "./Icons";
 
 const TINTS = ["#F4E7DE", "#E6EDE7", "#F1E1DE", "#E3E8EC", "#EFE6D1", "#F0E4EC"];
 
@@ -19,10 +21,12 @@ function tintFor(brand: string): string {
 export function ProductThumb({
   brand,
   image,
+  step = "cleanser",
   size = "h-16 w-16",
 }: {
   brand: string;
   image?: string;
+  step?: string;
   size?: string;
 }) {
   if (image) {
@@ -31,17 +35,18 @@ export function ProductThumb({
       <img
         src={image}
         alt={brand}
-        className={`${size} shrink-0 rounded-2xl object-cover border border-ink/10`}
+        className={`${size} shrink-0 rounded-2xl object-cover border border-ink/10 bg-white`}
       />
     );
   }
   return (
     <div
-      className={`${size} shrink-0 rounded-2xl border border-ink/10 flex items-center justify-center`}
+      className={`${size} shrink-0 rounded-2xl border border-ink/10 flex flex-col items-center justify-center gap-0.5`}
       style={{ background: `linear-gradient(135deg, ${tintFor(brand)}, #FBF7F2)` }}
       aria-hidden="true"
     >
-      <span className="font-display font-semibold text-lg text-ink/70">
+      <ProductTypeIcon step={step} className="h-6 w-6 text-ink/45" />
+      <span className="font-display font-semibold text-[11px] leading-none text-ink/55">
         {initials(brand)}
       </span>
     </div>
