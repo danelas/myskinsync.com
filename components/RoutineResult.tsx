@@ -1,11 +1,14 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import type { Answers, Routine, RoutineStep } from "@/lib/types";
+import type { PriceInfo } from "@/lib/price";
 import { affiliateUrl, AFFILIATE_LINK_PROPS } from "@/lib/affiliate";
 import { AffiliateDisclosure } from "./Disclosure";
 import { ProductThumb } from "./ProductThumb";
+import { PriceTag } from "./PriceTag";
 
-function StepCard({ s, index }: { s: RoutineStep; index: number }) {
+function StepCard({ s, index, price }: { s: RoutineStep; index: number; price?: PriceInfo }) {
   const p = s.product;
   return (
     <li className="rounded-2xl bg-white border border-ink/10 p-5 shadow-soft flex gap-4">
@@ -26,16 +29,35 @@ function StepCard({ s, index }: { s: RoutineStep; index: number }) {
           {p.brand} {p.name}
         </h4>
         <p className="mt-1 text-sm text-ink/70">{p.blurb}</p>
+        {price?.price && <PriceTag info={price} className="mt-2 block" />}
         <a
           href={affiliateUrl(p)}
           {...AFFILIATE_LINK_PROPS}
           className="mt-3 inline-block text-sm font-semibold rounded-full bg-ink text-cream px-4 py-2 shadow-soft hover:bg-clay hover:-translate-y-0.5 transition-all"
         >
-          Shop on Amazon →
+          {price?.price ? "Buy on Amazon →" : "Shop on Amazon →"}
         </a>
       </div>
     </li>
   );
+}
+
+/** Fetch live prices for any products in the routine that have a real ASIN. */
+function usePrices(routine: Routine): Record<string, PriceInfo> {
+  const [prices, setPrices] = useState<Record<string, PriceInfo>>({});
+  useEffect(() => {
+    const asins = [...new Set(
+      [...routine.am, ...routine.pm, ...routine.weekly]
+        .map((s) => s.product.asin)
+        .filter((a): a is string => Boolean(a))
+    )];
+    if (asins.length === 0) return;
+    fetch(`/api/prices?asins=${asins.join(",")}`)
+      .then((r) => (r.ok ? r.json() : {}))
+      .then(setPrices)
+      .catch(() => {});
+  }, [routine]);
+  return prices;
 }
 
 export function RoutineResult({
@@ -47,6 +69,7 @@ export function RoutineResult({
   answers: Answers;
   onRestart: () => void;
 }) {
+  const prices = usePrices(routine);
   return (
     <div className="space-y-10">
       <div className="text-center">
@@ -66,7 +89,7 @@ export function RoutineResult({
           <h3 className="font-semibold text-lg mb-3">☀️ Morning</h3>
           <ol className="space-y-3">
             {routine.am.map((s, i) => (
-              <StepCard key={`am-${i}`} s={s} index={i} />
+              <StepCard key={`am-${i}`} s={s} index={i} price={s.product.asin ? prices[s.product.asin] : undefined} />
             ))}
           </ol>
         </section>
@@ -74,7 +97,7 @@ export function RoutineResult({
           <h3 className="font-semibold text-lg mb-3">🌙 Night</h3>
           <ol className="space-y-3">
             {routine.pm.map((s, i) => (
-              <StepCard key={`pm-${i}`} s={s} index={i} />
+              <StepCard key={`pm-${i}`} s={s} index={i} price={s.product.asin ? prices[s.product.asin] : undefined} />
             ))}
           </ol>
         </section>
@@ -85,7 +108,7 @@ export function RoutineResult({
           <h3 className="font-semibold text-lg mb-3">✨ A few times a week</h3>
           <ol className="space-y-3 max-w-xl">
             {routine.weekly.map((s, i) => (
-              <StepCard key={`wk-${i}`} s={s} index={i} />
+              <StepCard key={`wk-${i}`} s={s} index={i} price={s.product.asin ? prices[s.product.asin] : undefined} />
             ))}
           </ol>
         </section>

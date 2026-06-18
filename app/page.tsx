@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getAllGuides } from "@/lib/guides";
+import { PRODUCTS } from "@/lib/products";
 import { LogoMark } from "@/components/Logo";
+import { ProductThumb } from "@/components/ProductThumb";
 
 const TRUSTED = ["CeraVe", "The Ordinary", "La Roche-Posay", "Paula's Choice", "EltaMD"];
 
@@ -81,23 +83,29 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid sm:grid-cols-3 gap-5">
-            {guides.map((g) => (
-              <Link
-                key={g.slug}
-                href={`/guides/${g.slug}`}
-                className="group rounded-4xl bg-white/80 border border-ink/10 p-7 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition-all block"
-              >
-                {g.concern && (
-                  <span className="inline-block rounded-full bg-blush/40 px-3 py-1 text-xs font-medium text-clayDark capitalize">
-                    {g.concern}
+            {guides.map((g) => {
+              const lead = PRODUCTS.find((p) => p.id === g.featuredProductIds[0]);
+              return (
+                <Link
+                  key={g.slug}
+                  href={`/guides/${g.slug}`}
+                  className="group rounded-4xl bg-white/80 border border-ink/10 p-7 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition-all block"
+                >
+                  <div className="flex items-center gap-3">
+                    {lead && <ProductThumb brand={lead.brand} image={lead.image} size="h-14 w-14" />}
+                    {g.concern && (
+                      <span className="inline-block rounded-full bg-blush/40 px-3 py-1 text-xs font-medium text-clayDark capitalize">
+                        {g.concern}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="mt-3 font-semibold text-lg leading-snug">{g.title}</h3>
+                  <span className="mt-3 inline-block text-sm font-medium text-clay group-hover:underline">
+                    Read guide →
                   </span>
-                )}
-                <h3 className="mt-3 font-semibold text-lg leading-snug">{g.title}</h3>
-                <span className="mt-3 inline-block text-sm font-medium text-clay group-hover:underline">
-                  Read guide →
-                </span>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </section>
       )}

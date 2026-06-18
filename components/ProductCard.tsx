@@ -1,9 +1,11 @@
 import type { Product } from "@/lib/types";
+import type { PriceInfo } from "@/lib/price";
 import { affiliateUrl, AFFILIATE_LINK_PROPS } from "@/lib/affiliate";
 import { ProductThumb } from "./ProductThumb";
+import { PriceTag } from "./PriceTag";
 
 /** Compact product card used in guides (and reusable elsewhere). */
-export function ProductCard({ product, rank }: { product: Product; rank?: number }) {
+export function ProductCard({ product, rank, priceInfo }: { product: Product; rank?: number; priceInfo?: PriceInfo }) {
   return (
     <div className="rounded-2xl bg-white border border-ink/10 p-5 shadow-soft">
       <div className="flex items-start gap-4">
@@ -23,12 +25,13 @@ export function ProductCard({ product, rank }: { product: Product; rank?: number
         </div>
       </div>
       <p className="mt-3 text-sm text-ink/70">{product.blurb}</p>
+      {priceInfo?.price && <PriceTag info={priceInfo} className="mt-3 block" />}
       <a
         href={affiliateUrl(product)}
         {...AFFILIATE_LINK_PROPS}
         className="mt-3 inline-block text-sm font-semibold rounded-full bg-ink text-cream px-4 py-2 shadow-soft hover:bg-clay hover:-translate-y-0.5 transition-all"
       >
-        Check price on Amazon →
+        {priceInfo?.price ? "Buy on Amazon →" : "Check price on Amazon →"}
       </a>
     </div>
   );

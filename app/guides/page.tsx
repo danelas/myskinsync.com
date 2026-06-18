@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllGuides } from "@/lib/guides";
+import { PRODUCTS } from "@/lib/products";
+import { ProductThumb } from "@/components/ProductThumb";
+
+function leadProduct(ids: string[]) {
+  return PRODUCTS.find((p) => p.id === ids[0]);
+}
 
 export const metadata: Metadata = {
   title: "Skincare Guides",
@@ -23,19 +29,30 @@ export default function GuidesIndex() {
       </header>
 
       <div className="grid sm:grid-cols-2 gap-5">
-        {guides.map((g) => (
-          <Link
-            key={g.slug}
-            href={`/guides/${g.slug}`}
-            className="rounded-2xl bg-white border border-ink/10 p-6 hover:border-clay transition-colors block"
-          >
-            <h2 className="font-semibold text-lg leading-snug">{g.title}</h2>
-            <p className="mt-2 text-sm text-ink/70">{g.description}</p>
-            <span className="mt-3 inline-block text-sm font-medium text-clay">
-              Read guide →
-            </span>
-          </Link>
-        ))}
+        {guides.map((g) => {
+          const lead = leadProduct(g.featuredProductIds);
+          return (
+            <Link
+              key={g.slug}
+              href={`/guides/${g.slug}`}
+              className="rounded-4xl bg-white border border-ink/10 p-6 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition-all flex gap-4"
+            >
+              {lead && <ProductThumb brand={lead.brand} image={lead.image} size="h-20 w-20" />}
+              <div className="flex-1">
+                {g.concern && (
+                  <span className="inline-block rounded-full bg-blush/40 px-3 py-1 text-xs font-medium text-clayDark capitalize">
+                    {g.concern}
+                  </span>
+                )}
+                <h2 className="mt-2 font-semibold text-lg leading-snug">{g.title}</h2>
+                <p className="mt-2 text-sm text-ink/70">{g.description}</p>
+                <span className="mt-3 inline-block text-sm font-medium text-clay">
+                  Read guide →
+                </span>
+              </div>
+            </Link>
+          );
+        })}
       </div>
 
       <div className="mt-12 text-center">

@@ -3,8 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide, getGuideSlugs } from "@/lib/guides";
 import { PRODUCTS } from "@/lib/products";
+import { getPrices } from "@/lib/price";
 import { ProductCard } from "@/components/ProductCard";
 import { AffiliateDisclosure } from "@/components/Disclosure";
+
+// ISR: re-render every 6h so live prices stay well within Amazon's 24h rule.
+export const revalidate = 21600;
 
 export function generateStaticParams() {
   return getGuideSlugs().map((slug) => ({ slug }));
@@ -21,13 +25,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function GuidePage({ params }: { params: { slug: string } }) {
+export default async function GuidePage({ params }: { params: { slug: string } }) {
   const g = getGuide(params.slug);
   if (!g) notFound();
 
   const featured = g.featuredProductIds
     .map((id) => PRODUCTS.find((p) => p.id === id))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
+  // Live prices for the featured products (no-op until ASINs are synced).
+  const prices = await getPrices(featured.map((p) => p.asin).filter((a): a is string => Boolean(a)));
 
   // SEO: Article + FAQ structured data
   const jsonLd = {
@@ -92,7 +99,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
           <h2 className="text-xl font-semibold mb-4">Our top picks</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {featured.map((p, i) => (
-              <ProductCard key={p.id} product={p} rank={i + 1} />
+              <ProductCard key={p.id} product={p} rank={i + 1} priceInfo={p.asin ? prices[p.asin] : undefined} />
             ))}
           </div>
           <div className="mt-3">
