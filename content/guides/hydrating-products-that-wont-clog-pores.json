@@ -1,0 +1,61 @@
+{
+  "slug": "hydrating-products-that-wont-clog-pores",
+  "title": "Hydrating Skincare That Won't Cause Closed Comedones",
+  "description": "Dehydrated but breaking out in tiny bumps? Here's how to hydrate acne-prone, combination skin without triggering closed comedones — the right serums and moisturizers to use.",
+  "concern": "dryness",
+  "skinType": "combination",
+  "painQuote": "Hydrating serums and moisturizers that DON'T cause closed comedones!",
+  "intro": [
+    "Here's the cruel paradox: your skin feels dry and tight, so you reach for richer products — and a week later you've got a forehead full of tiny, flesh-colored bumps. Those are closed comedones, and they're often caused by heavy, pore-clogging hydration, not lack of it.",
+    "The answer is to hydrate with water-based, non-comedogenic layers instead of heavy oils and butters. Done right, you get plump, comfortable skin without the bumps."
+  ],
+  "sections": [
+    {
+      "h2": "Dehydrated vs. dry — they're not the same",
+      "body": [
+        "Dry skin lacks oil; dehydrated skin lacks water. Most people with combination or oily skin who break out from 'rich' products are actually dehydrated — they need water, not grease.",
+        "The fix is a humectant (like hyaluronic acid) sealed with a lightweight moisturizer, rather than a thick balm."
+      ]
+    },
+    {
+      "h2": "Step 1: a water-based humectant serum",
+      "body": [
+        "A hyaluronic acid serum pulls water into the skin and layers under anything. Apply it to slightly damp skin, then seal it — on its own it can feel tight in dry air."
+      ]
+    },
+    {
+      "h2": "Step 2: a lightweight, non-comedogenic moisturizer",
+      "body": [
+        "Skip heavy creams loaded with oils if you're comedone-prone. A lightweight, oil-free lotion locks in the serum's hydration without clogging.",
+        "Look for 'non-comedogenic' on the label, and patch-test new products on your jaw for a few days before going all-in."
+      ]
+    },
+    {
+      "h2": "Step 3: don't skip SPF",
+      "body": [
+        "A lightweight daily sunscreen protects the hydration work you're doing and prevents the dark marks old breakouts leave behind.",
+        "Want this dialed in for your exact skin? The quiz builds a full routine around hydrating without clogging."
+      ]
+    }
+  ],
+  "featuredProductIds": [
+    "to-hyaluronic",
+    "cerave-pm-lotion",
+    "boj-relief-sun"
+  ],
+  "faq": [
+    {
+      "q": "Can hyaluronic acid cause closed comedones?",
+      "a": "Hyaluronic acid itself is water-based and very unlikely to clog pores. Closed comedones usually come from heavy occlusive moisturizers or oils layered on top — or from not sealing the HA, which can leave skin tight."
+    },
+    {
+      "q": "How do I get rid of closed comedones I already have?",
+      "a": "Gentle, consistent exfoliation with a leave-on BHA can help over a few weeks for non-sensitive skin, alongside switching to lighter hydration. For stubborn or widespread bumps, see a dermatologist."
+    },
+    {
+      "q": "Should oily skin still use a moisturizer?",
+      "a": "Yes. Skipping moisturizer makes skin overproduce oil to compensate. Use a lightweight, oil-free formula rather than skipping the step."
+    }
+  ],
+  "updated": "2026-06-15"
+}

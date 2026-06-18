@@ -1,0 +1,60 @@
+{
+  "slug": "sunscreen-that-wont-break-you-out",
+  "title": "Sunscreens That Won't Break You Out: Picks for Acne-Prone & Sensitive Skin",
+  "description": "Every sunscreen seems to cause breakouts? Here are lightweight, non-comedogenic sunscreens that acne-prone and sensitive skin actually tolerate — no white cast, no clogged pores.",
+  "concern": "acne",
+  "skinType": "sensitive",
+  "painQuote": "A sunscreen that does not break me out — I've tried everything.",
+  "intro": [
+    "It's one of the most common skincare frustrations: you know you need daily SPF, but every sunscreen you try leaves you greasy, clogged, or broken out. So you skip it — and then deal with dark marks and irritation that sun exposure makes worse.",
+    "The fix usually isn't 'more sunscreen,' it's the right formula. Acne-prone and sensitive skin do best with lightweight, non-comedogenic sunscreens that absorb fast and skip heavy oils and fragrance."
+  ],
+  "sections": [
+    {
+      "h2": "Why your sunscreen might be breaking you out",
+      "body": [
+        "Three usual culprits: heavy occlusive oils that trap sweat and sebum, added fragrance that irritates reactive skin, and thick mineral formulas that sit on top of the skin and mix with oil.",
+        "The goal is a fluid, fast-absorbing texture labeled non-comedogenic — and, if you're sensitive, fragrance-free."
+      ]
+    },
+    {
+      "h2": "Best for sensitive, acne-prone skin",
+      "body": [
+        "A mineral SPF formulated specifically for breakout-prone skin — often with niacinamide to calm redness — is the gentlest reliable choice. It won't sting, and it layers cleanly under makeup."
+      ]
+    },
+    {
+      "h2": "Best lightweight daily pick (no white cast)",
+      "body": [
+        "If you want something featherlight for everyday wear, a modern chemical or hybrid sunscreen disappears into the skin with zero white cast and a soft finish — the kind of SPF you'll actually want to reapply."
+      ]
+    },
+    {
+      "h2": "Best high-protection everyday option",
+      "body": [
+        "For a dependable broad-spectrum option you can use on face and body, a high-SPF 'melt-in' fluid gives strong protection without a greasy film.",
+        "Still getting breakouts no matter what? Take the quiz — we'll factor in your sensitivity and match a full routine, SPF included."
+      ]
+    }
+  ],
+  "featuredProductIds": [
+    "eltamd-uv-clear",
+    "boj-relief-sun",
+    "lrp-anthelios"
+  ],
+  "faq": [
+    {
+      "q": "Is mineral or chemical sunscreen better for acne-prone skin?",
+      "a": "Either can work — what matters more is that it's lightweight, non-comedogenic, and fragrance-free. Sensitive skin often prefers mineral; those who hate white cast often prefer chemical or hybrid."
+    },
+    {
+      "q": "How much sunscreen should I use on my face?",
+      "a": "About two finger-lengths for the face and neck. Most breakouts blamed on sunscreen come from under-applying and re-layering, not the product itself."
+    },
+    {
+      "q": "Do I need sunscreen if I'm indoors?",
+      "a": "UVA passes through windows and contributes to aging and dark spots, so daily SPF is worth it even on indoor days near windows. If you're truly away from light all day, it matters less."
+    }
+  ],
+  "updated": "2026-06-16"
+}

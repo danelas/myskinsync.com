@@ -1,0 +1,80 @@
+name: MySkinSync Pinterest Daily
+
+on:
+  schedule:
+    # 11:30 UTC = 7:30 AM EDT / 6:30 AM EST — runs once daily, before the first
+    # pin slot (8 AM ET). The agent builds 5 pins and schedules them via
+    # Upload-Post for 8 AM, 12 PM, 3 PM, 6 PM, 9 PM ET.
+    - cron: "30 11 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (render only, no post)"
+        required: false
+        default: "false"
+        type: choice
+        options: ["true", "false"]
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: agent
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: agent/package-lock.json
+
+      - name: Install agent deps
+        run: npm ci
+
+      - name: Check secrets are present
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
+          UPLOAD_POST_USER: ${{ secrets.UPLOAD_POST_USER }}
+          PINTEREST_BOARD: ${{ secrets.PINTEREST_BOARD }}
+        run: |
+          missing=0
+          for v in ANTHROPIC_API_KEY OPENAI_API_KEY UPLOAD_POST_API_KEY UPLOAD_POST_USER PINTEREST_BOARD; do
+            val="${!v}"
+            if [ -z "$val" ]; then
+              echo "::error::Secret $v is EMPTY or not set"
+              missing=1
+            else
+              echo "OK: $v is present (length=${#val})"
+            fi
+          done
+          [ "$missing" = "0" ] || exit 1
+
+      - name: Run Pinterest agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
+          UPLOAD_POST_USER: ${{ secrets.UPLOAD_POST_USER }}
+          PINTEREST_BOARD: ${{ secrets.PINTEREST_BOARD }}
+          SITE_URL: ${{ secrets.SITE_URL || 'https://myskinsync.com' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            npm run pinterest:dry
+          else
+            npm run pinterest
+          fi
+
+      - name: Upload preview artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pinterest-preview-${{ github.run_id }}
+          path: agent/preview/
+          retention-days: 14
