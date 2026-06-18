@@ -7,6 +7,7 @@ import { affiliateUrl, AFFILIATE_LINK_PROPS } from "@/lib/affiliate";
 import { AffiliateDisclosure } from "./Disclosure";
 import { ProductThumb } from "./ProductThumb";
 import { PriceTag } from "./PriceTag";
+import { EmailCapture } from "./EmailCapture";
 
 function StepCard({ s, index, price }: { s: RoutineStep; index: number; price?: PriceInfo }) {
   const p = s.product;
@@ -70,6 +71,11 @@ export function RoutineResult({
   onRestart: () => void;
 }) {
   const prices = usePrices(routine);
+  const summary = {
+    am: routine.am.map((s) => ({ label: s.label, id: s.product.id, brand: s.product.brand, name: s.product.name })),
+    pm: routine.pm.map((s) => ({ label: s.label, id: s.product.id, brand: s.product.brand, name: s.product.name })),
+    weekly: routine.weekly.map((s) => ({ label: s.label, id: s.product.id, brand: s.product.brand, name: s.product.name })),
+  };
   return (
     <div className="space-y-10">
       <div className="text-center">
@@ -113,6 +119,8 @@ export function RoutineResult({
           </ol>
         </section>
       )}
+
+      <EmailCapture profile={answers} routine={summary} />
 
       <div className="rounded-2xl bg-white/70 border border-ink/10 p-6 space-y-4">
         <p className="text-sm text-ink/70">
