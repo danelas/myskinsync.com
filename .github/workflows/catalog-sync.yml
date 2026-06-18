@@ -1,0 +1,54 @@
+name: MySkinSync Catalog Sync
+
+# Resolves the curated catalog to real Amazon ASINs + images via the Creators API
+# and commits content/products-live.json. ASIN/image are durable, so weekly is
+# plenty (and a manual trigger is available).
+on:
+  schedule:
+    - cron: "0 9 * * 1" # Mondays 09:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: agent
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: agent/package-lock.json
+
+      - name: Install agent deps
+        run: npm ci
+
+      - name: Sync catalog from Amazon Creators API
+        env:
+          AMAZON_CREDENTIAL_ID: ${{ secrets.AMAZON_CREDENTIAL_ID }}
+          AMAZON_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREDENTIAL_SECRET }}
+          AMAZON_CREDENTIAL_VERSION: ${{ secrets.AMAZON_CREDENTIAL_VERSION }}
+          AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+          AMAZON_MARKETPLACE: ${{ secrets.AMAZON_MARKETPLACE || 'www.amazon.com' }}
+        run: npm run sync
+
+      - name: Commit updated product data
+        run: |
+          cd ..
+          if git diff --quiet content/products-live.json; then
+            echo "No changes to product data."
+          else
+            git config user.name "myskinsync-bot"
+            git config user.email "danamazon6@gmail.com"
+            git add content/products-live.json
+            git commit -m "chore: sync live Amazon product data"
+            git push
+          fi

@@ -1,4 +1,5 @@
 import type { Product } from "./types";
+import liveData from "@/content/products-live.json";
 
 /**
  * Seed catalog — every product here was surfaced by The Listener as something
@@ -218,5 +219,16 @@ export const PRODUCTS: Product[] = [
     blurb: "Derm-favorite for acne-prone, sensitive skin — niacinamide included.",
   },
 ];
+
+// Overlay live Amazon data (real ASIN + image) synced by agent/sync-catalog.ts.
+// Empty {} until the first sync runs — products then fall back to monogram thumbs
+// and tagged-search links. ASIN/image are durable, so this is cache-safe.
+type LiveEntry = { asin?: string; image?: string };
+const LIVE = liveData as Record<string, LiveEntry>;
+for (const p of PRODUCTS) {
+  const l = LIVE[p.id];
+  if (l?.asin) p.asin = l.asin;
+  if (l?.image) p.image = l.image;
+}
 
 export const byStep = (step: string) => PRODUCTS.filter((p) => p.step === step);
