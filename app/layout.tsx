@@ -36,19 +36,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col antialiased">
-        <header className="border-b border-ink/10">
+      <body className="page-bg min-h-screen flex flex-col antialiased">
+        <header className="sticky top-0 z-20 backdrop-blur-md bg-cream/70 border-b border-ink/10">
           <div className="mx-auto max-w-5xl px-5 h-16 flex items-center justify-between">
-            <Link href="/" className="font-semibold text-lg tracking-tight">
+            <Link href="/" className="font-display font-semibold text-xl tracking-tight">
               My<span className="text-clay">Skin</span>Sync
             </Link>
-            <nav className="flex items-center gap-5">
-              <Link href="/guides" className="text-sm font-medium text-ink/70 hover:text-ink">
+            <nav className="flex items-center gap-2 sm:gap-4">
+              <Link href="/guides" className="text-sm font-medium text-ink/70 hover:text-ink px-2 py-1">
                 Guides
               </Link>
               <Link
                 href="/quiz"
-                className="text-sm font-medium rounded-full bg-ink text-cream px-4 py-2 hover:bg-clay transition-colors"
+                className="text-sm font-semibold rounded-full bg-ink text-cream px-5 py-2.5 shadow-soft hover:bg-clay hover:-translate-y-0.5 transition-all"
               >
                 Take the quiz
               </Link>
@@ -58,8 +58,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <main className="flex-1">{children}</main>
 
-        <footer className="border-t border-ink/10 mt-16">
-          <div className="mx-auto max-w-5xl px-5 py-10 space-y-6">
+        <footer className="border-t border-ink/10 mt-20 bg-cream/50">
+          <div className="mx-auto max-w-5xl px-5 py-12 space-y-6">
+            <Link href="/" className="font-display font-semibold text-lg tracking-tight">
+              My<span className="text-clay">Skin</span>Sync
+            </Link>
             <AffiliateDisclosure />
             <p className="text-xs text-ink/50">
               © {new Date().getFullYear()} {SITE}. All product names are trademarks

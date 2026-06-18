@@ -7,7 +7,7 @@ import { AffiliateDisclosure } from "./Disclosure";
 function StepCard({ s, index }: { s: RoutineStep; index: number }) {
   const p = s.product;
   return (
-    <li className="rounded-2xl bg-white border border-ink/10 p-5 flex gap-4">
+    <li className="rounded-2xl bg-white border border-ink/10 p-5 shadow-soft flex gap-4">
       <div className="h-8 w-8 shrink-0 rounded-full bg-sage/30 text-ink font-semibold flex items-center justify-center text-sm">
         {index + 1}
       </div>
@@ -20,14 +20,14 @@ function StepCard({ s, index }: { s: RoutineStep; index: number }) {
             <span className="text-xs text-ink/50">· {s.frequency}</span>
           )}
         </div>
-        <h4 className="mt-1 font-semibold leading-tight">
+        <h4 className="mt-1 font-semibold leading-tight font-sans">
           {p.brand} {p.name}
         </h4>
         <p className="mt-1 text-sm text-ink/70">{p.blurb}</p>
         <a
           href={affiliateUrl(p)}
           {...AFFILIATE_LINK_PROPS}
-          className="mt-3 inline-block text-sm font-medium rounded-full bg-ink text-cream px-4 py-2 hover:bg-clay transition-colors"
+          className="mt-3 inline-block text-sm font-semibold rounded-full bg-ink text-cream px-4 py-2 shadow-soft hover:bg-clay hover:-translate-y-0.5 transition-all"
         >
           Shop on Amazon →
         </a>
