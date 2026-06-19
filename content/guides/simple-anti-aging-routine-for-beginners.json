@@ -1,0 +1,58 @@
+{
+  "slug": "simple-anti-aging-routine-for-beginners",
+  "title": "A Simple Anti-Aging Routine for Beginners",
+  "description": "Want to soften fine lines without a 10-step routine? The three things that actually move the needle — a retinoid, a good moisturizer, and daily SPF — plus how to start without irritation.",
+  "concern": "aging",
+  "skinType": "normal",
+  "painQuote": "Turning 41 soon — looking for lifting cream recommendations.",
+  "intro": [
+    "Anti-aging marketing is overwhelming and expensive, but the science is refreshingly simple. A small number of ingredients have real evidence behind them; almost everything else is a nice-to-have.",
+    "If you do just three things consistently, you'll see more than people who own twenty products. Here they are, and how to start without the dreaded retinoid peeling."
+  ],
+  "sections": [
+    {
+      "h2": "The three that actually matter",
+      "body": [
+        "A retinoid (to smooth texture and soften fine lines), a barrier-supporting moisturizer (to keep skin plump and comfortable), and daily sunscreen (which prevents the majority of visible aging). That's the core.",
+        "Everything else — serums, eye creams, peptides — is optional polish on top of these."
+      ]
+    },
+    {
+      "h2": "How to start a retinoid without peeling",
+      "body": [
+        "Start with a gentle, low-strength retinoid like a granactive retinoid emulsion. Use it once or twice a week at night, on dry skin, a pea-sized amount for the whole face, then moisturize.",
+        "Build up slowly over weeks. Flaking and stinging mean you're going too fast — back off, don't push through."
+      ]
+    },
+    {
+      "h2": "Sunscreen is the best anti-aging product",
+      "body": [
+        "Up to ~80% of visible facial aging is linked to sun exposure. No serum competes with simply wearing broad-spectrum SPF every morning.",
+        "If you only adopt one new habit, make it this one."
+      ]
+    },
+    {
+      "h2": "What to skip",
+      "body": [
+        "You don't need a separate eye cream, a toner, or a 7-step layering ritual to start. Keep it simple and consistent — that's what gets results.",
+        "Not sure which products fit your skin? The quiz builds the full lineup for you."
+      ]
+    }
+  ],
+  "featuredProductIds": ["to-retinoid", "cerave-cream", "lrp-anthelios"],
+  "faq": [
+    {
+      "q": "What's the difference between retinol and a retinoid?",
+      "a": "Retinoid is the umbrella term; retinol is one over-the-counter type. Gentle 'granactive' retinoids tend to irritate less than classic retinol while still smoothing texture. Prescription tretinoin is the strongest tier."
+    },
+    {
+      "q": "How long until I see results?",
+      "a": "Texture and tone often improve in 8–12 weeks; fine lines take longer. Consistency matters far more than strength — a gentle routine you actually keep up beats a strong one you quit."
+    },
+    {
+      "q": "Can sensitive skin use retinoids?",
+      "a": "Usually yes, with a gentle formula, a low frequency (1–2x a week to start), and plenty of moisturizer. If you stay red or flaky, slow down or speak to a dermatologist."
+    }
+  ],
+  "updated": "2026-06-18"
+}

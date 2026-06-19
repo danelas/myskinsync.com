@@ -1,0 +1,58 @@
+{
+  "slug": "how-to-treat-hormonal-and-stubborn-acne",
+  "title": "How to Treat Hormonal & Stubborn Acne (Gently but Effectively)",
+  "description": "Breakouts that won't quit — especially along the jaw and chin? Here's a gentle-but-effective acne routine that clears skin without wrecking your barrier, plus when it's time to see a dermatologist.",
+  "concern": "acne",
+  "skinType": "combination",
+  "painQuote": "My hormonal acne keeps getting worse no matter what I try — help!",
+  "intro": [
+    "Stubborn acne — deep, tender bumps around the jaw, chin, and neck that flare on a cycle — is one of the most frustrating skin problems. The instinct is to attack it with everything harsh, which usually makes it angrier.",
+    "The routine that actually works is gentle but consistent: one proven active, a non-stripping cleanser, and a barrier you don't destroy. Here's how to build it."
+  ],
+  "sections": [
+    {
+      "h2": "Why most acne routines backfire",
+      "body": [
+        "Scrubbing, drying alcohol toners, and stacking three actives at once strip the barrier — which triggers more oil and more breakouts. Red, peeling, still-breaking-out skin is the classic over-treatment loop.",
+        "Effective acne care is gentle and repetitive, not aggressive."
+      ]
+    },
+    {
+      "h2": "The core: one proven active",
+      "body": [
+        "Adapalene (a gentle OTC retinoid) is the gold-standard starting point — it clears and prevents breakouts and smooths texture. Use a pea-sized amount at night, starting every other night.",
+        "Azelaic acid pairs well for calming redness and fading the marks acne leaves behind, and it's gentle enough for most skin."
+      ]
+    },
+    {
+      "h2": "Don't skip moisturizer or SPF",
+      "body": [
+        "A lightweight cleanser and an oil-free moisturizer keep the barrier intact so the active can work. A non-comedogenic sunscreen prevents the dark marks breakouts leave behind from deepening.",
+        "Yes — acne-prone skin still needs daily moisturizer and SPF."
+      ]
+    },
+    {
+      "h2": "When to see a dermatologist",
+      "body": [
+        "If breakouts are deep, painful, scarring, or clearly hormonal and not responding after 8–12 weeks, see a dermatologist. Prescription options and hormonal treatments exist and work — topicals can only do so much.",
+        "This guide is general information, not medical advice."
+      ]
+    }
+  ],
+  "featuredProductIds": ["cerave-foaming-cleanser", "differin-gel", "to-azelaic", "eltamd-uv-clear"],
+  "faq": [
+    {
+      "q": "Adapalene or benzoyl peroxide — which should I start with?",
+      "a": "Both work. Adapalene (a retinoid) is great for whiteheads, texture, and prevention; benzoyl peroxide targets the bacteria in inflamed pimples. Many people use adapalene at night and a benzoyl peroxide wash in the morning, but introduce one at a time."
+    },
+    {
+      "q": "How long until acne clears?",
+      "a": "Give a routine 8–12 weeks. Retinoids often cause an initial 'purge' in the first few weeks before improvement — that's normal; don't quit early."
+    },
+    {
+      "q": "Can topical products fix hormonal acne?",
+      "a": "They help a lot, but truly hormonal acne sometimes needs a dermatologist for prescription or hormonal treatment. If topicals aren't enough after a few months, book an appointment."
+    }
+  ],
+  "updated": "2026-06-18"
+}

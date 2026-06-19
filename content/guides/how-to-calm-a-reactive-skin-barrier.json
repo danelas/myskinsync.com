@@ -1,0 +1,58 @@
+{
+  "slug": "how-to-calm-a-reactive-skin-barrier",
+  "title": "How to Calm a Reactive, Irritated Skin Barrier",
+  "description": "Stinging, redness, tightness, random breakouts? Your skin barrier may be damaged. Here's how to strip your routine back, calm it down, and rebuild it — with the gentlest possible products.",
+  "concern": "redness",
+  "skinType": "sensitive",
+  "painQuote": "Everything irritates my skin lately — it stings, it's red, and it's ruining my life.",
+  "intro": [
+    "When skin suddenly turns reactive — stinging from products that used to be fine, redness, tight dry patches, even breakouts — it's usually a damaged moisture barrier. Often from over-exfoliating or too many actives at once.",
+    "The fix is counterintuitive: do less, not more. Here's how to reset, soothe, and rebuild so your skin can tolerate products again."
+  ],
+  "sections": [
+    {
+      "h2": "Signs your barrier is compromised",
+      "body": [
+        "Products that never bothered you now sting or burn. Skin feels tight after washing, looks red or blotchy, and may flake while also breaking out. That combination is the tell.",
+        "It's not a reason to add more products — it's a sign to take some away."
+      ]
+    },
+    {
+      "h2": "The reset: a 'skincare diet'",
+      "body": [
+        "Pause all actives — acids, retinoids, vitamin C, scrubs. For 1–2 weeks, use only three things: a gentle non-foaming cleanser, a soothing moisturizer, and sunscreen.",
+        "Fragrance-free everything. The goal is to give your skin nothing to react to."
+      ]
+    },
+    {
+      "h2": "Soothe and rebuild",
+      "body": [
+        "A barrier-repair balm with panthenol and ceramides helps calm visible redness and restore comfort. A rich ceramide moisturizer seals it in overnight.",
+        "Most reactive skin settles noticeably within a couple of weeks of this stripped-back routine."
+      ]
+    },
+    {
+      "h2": "Reintroduce slowly",
+      "body": [
+        "Once calm, add back ONE active at a time, once or twice a week, and wait. If it stings, it's too soon. Patience here prevents the next flare.",
+        "For persistent redness, burning, or anything that won't settle, see a dermatologist — it could be rosacea or dermatitis that needs treatment."
+      ]
+    }
+  ],
+  "featuredProductIds": ["vanicream-cleanser", "lrp-cicaplast", "cerave-cream"],
+  "faq": [
+    {
+      "q": "How long does a damaged barrier take to heal?",
+      "a": "Often 2–4 weeks of a gentle, stripped-back routine. Severe or ongoing irritation can take longer and may need a dermatologist's input."
+    },
+    {
+      "q": "Should I stop using actives completely?",
+      "a": "Temporarily, yes. Pausing acids, retinoids, and scrubs is the fastest way to let the barrier recover. Reintroduce them one at a time once skin is calm."
+    },
+    {
+      "q": "Is fragrance the problem?",
+      "a": "It's a common trigger for reactive skin. Switching to fragrance-free cleansers and moisturizers during a reset removes one of the most likely irritants."
+    }
+  ],
+  "updated": "2026-06-17"
+}

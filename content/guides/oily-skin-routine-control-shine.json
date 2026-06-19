@@ -1,0 +1,58 @@
+{
+  "slug": "oily-skin-routine-control-shine",
+  "title": "Oily Skin Routine: Control Shine Without Stripping",
+  "description": "Shiny by midday, enlarged pores, the odd breakout? Stripping your skin actually makes oil worse. Here's a lightweight routine that balances oil and smooths texture — without the tight, squeaky feeling.",
+  "concern": "texture",
+  "skinType": "oily",
+  "painQuote": "Looking for a silicone-free cleanser, moisturizer and sunscreen for oily skin.",
+  "intro": [
+    "Oily skin gets bad advice: strip it, dry it out, scrub it. That backfires — when you strip the barrier, skin pumps out even more oil to compensate, and you end up shinier and more broken out.",
+    "The fix is balance, not war. A gentle routine with the right lightweight textures controls shine, smooths pores, and keeps breakouts down."
+  ],
+  "sections": [
+    {
+      "h2": "Why stripping backfires",
+      "body": [
+        "Harsh foaming washes and alcohol toners remove oil for an hour, then your skin overproduces to recover — the 'oily by noon' cycle. Tightness after cleansing is a warning sign, not a goal.",
+        "Aim for clean-but-comfortable, never squeaky."
+      ]
+    },
+    {
+      "h2": "The lightweight lineup",
+      "body": [
+        "A gentle foaming cleanser removes excess oil without stripping. Follow with an oil-free, lightweight moisturizer — yes, oily skin still needs to be moisturized — and a non-greasy daily sunscreen.",
+        "Skip heavy creams and balms; they sit on the skin and can clog."
+      ]
+    },
+    {
+      "h2": "Niacinamide and BHA for pores",
+      "body": [
+        "Niacinamide helps regulate oil and visibly tightens pores over time — a perfect daytime serum for oily skin. A 2% BHA (salicylic acid) exfoliant used 2–3x a week keeps pores clear and smooths texture.",
+        "Introduce the BHA slowly; over-exfoliating restarts the oil cycle."
+      ]
+    },
+    {
+      "h2": "Don't skip moisturizer or SPF",
+      "body": [
+        "The most common oily-skin mistake is skipping moisturizer. A light, oil-free lotion keeps the barrier balanced so skin produces less oil — not more.",
+        "Want it dialed in for your exact skin? Take the 60-second quiz."
+      ]
+    }
+  ],
+  "featuredProductIds": ["cerave-foaming-cleanser", "to-niacinamide", "cerave-pm-lotion", "boj-relief-sun"],
+  "faq": [
+    {
+      "q": "Should oily skin use a moisturizer?",
+      "a": "Absolutely. Skipping it makes skin overproduce oil to compensate. Use a lightweight, oil-free formula rather than skipping the step."
+    },
+    {
+      "q": "How often should oily skin exfoliate?",
+      "a": "A leave-on BHA 2–3 times a week is plenty for most. Daily scrubbing or over-exfoliating strips the barrier and worsens oil and breakouts."
+    },
+    {
+      "q": "Will controlling oil reduce my breakouts?",
+      "a": "Often yes — balanced oil and clear pores mean fewer clogs. But persistent acne may need a dedicated active like adapalene; see our acne guide."
+    }
+  ],
+  "updated": "2026-06-16"
+}

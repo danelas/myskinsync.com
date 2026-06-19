@@ -1,0 +1,58 @@
+{
+  "slug": "the-ordinary-routine-for-beginners",
+  "title": "The Ordinary Routine for Beginners: What to Actually Buy",
+  "description": "The Ordinary is cheap and effective, but the huge catalog is overwhelming and some products clash. Here's a simple, no-conflict starter routine — which to buy first and how to layer them.",
+  "concern": "texture",
+  "skinType": "combination",
+  "painQuote": "I'm new to skincare and The Ordinary has a hundred products — which do I actually need?",
+  "intro": [
+    "The Ordinary makes genuinely good products at unbeatable prices — but the catalog is huge, the names are chemistry labels, and some actives shouldn't be layered together. No wonder beginners freeze.",
+    "You don't need ten bottles. Here's a simple starter routine that covers the basics, plus the few combinations to avoid."
+  ],
+  "sections": [
+    {
+      "h2": "Don't buy ten things at once",
+      "body": [
+        "The fastest way to irritate your skin (and waste money) is grabbing five actives because a video said to. Start with a small, non-conflicting set and add slowly.",
+        "Pick by your actual goal — hydration, oil/pores, or fading marks — not by what's trending."
+      ]
+    },
+    {
+      "h2": "The starter set",
+      "body": [
+        "Hyaluronic Acid 2% + B5 for lightweight hydration (AM and PM, on damp skin). Niacinamide 10% + Zinc for oil and pores in the morning. Azelaic Acid 10% at night for texture, redness, and fading marks.",
+        "That trio covers most beginners without clashing."
+      ]
+    },
+    {
+      "h2": "How to layer (thin to thick)",
+      "body": [
+        "Apply water-based, thinnest products first, then thicker ones, then seal with moisturizer. So: hyaluronic acid → niacinamide (AM) or azelaic (PM) → moisturizer.",
+        "Always finish the morning with sunscreen — The Ordinary doesn't make one, so that's your one other-brand essential."
+      ]
+    },
+    {
+      "h2": "What NOT to mix",
+      "body": [
+        "Don't pile multiple strong actives in the same routine when you're starting — e.g., avoid layering several acids, or vitamin C with niacinamide at the exact same time if it irritates you. Alternate them across AM/PM or different days.",
+        "Want a foolproof, no-guesswork routine? Take the quiz and we'll sequence it for you."
+      ]
+    }
+  ],
+  "featuredProductIds": ["to-hyaluronic", "to-niacinamide", "to-azelaic", "boj-relief-sun"],
+  "faq": [
+    {
+      "q": "Which The Ordinary product should I buy first?",
+      "a": "If you're unsure, start with Hyaluronic Acid 2% + B5 (hydration, suits everyone) and Niacinamide 10% + Zinc (oil and pores). Add a targeted active like Azelaic Acid once your skin is comfortable."
+    },
+    {
+      "q": "Can I use The Ordinary products together?",
+      "a": "Many yes, but not all at full strength in one routine. Layer thin-to-thick, introduce one at a time, and split strong actives between morning and night to avoid irritation."
+    },
+    {
+      "q": "Do I still need other brands?",
+      "a": "Yes — at minimum a sunscreen, since The Ordinary doesn't make one. A good lightweight SPF every morning is non-negotiable."
+    }
+  ],
+  "updated": "2026-06-17"
+}
